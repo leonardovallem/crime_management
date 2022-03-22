@@ -1,17 +1,14 @@
 package vista
 
 import javafx.application.Application
-import javafx.geometry.Pos
 import javafx.scene.Scene
-import javafx.scene.paint.Color
-import javafx.scene.text.Text
 import javafx.stage.Stage
-import vista.Styles.SUBTITLE
-import vista.Styles.SURFACE
-import vista.components.General
+import vista.components.general.GlobalPane
+import vista.components.renderHomeScreen
+import vista.util.Styles.SURFACE
 
 class Sistema : Application() {
-    val globalPane = General.GlobalPane().apply {
+    val globalPane = GlobalPane().apply {
         style = SURFACE
     }
 

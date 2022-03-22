@@ -2,7 +2,7 @@ package modelo
 
 import java.util.Date
 
-data class Vitima(
+data class Criminoso(
     val id: Int? = null,
     val nome: String,
     val cpf: String,

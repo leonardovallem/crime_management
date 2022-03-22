@@ -1,4 +1,4 @@
-package vista
+package vista.util
 
 object Styles {
     const val SURFACE = """
@@ -18,7 +18,19 @@ object Styles {
         -fx-font-size: 24px;
     """
 
+    const val SECONDARY_VARIANT_BUTTON = """
+        -fx-background-color: orangered;
+        -fx-text-fill: white;
+        -fx-font-size: 24px;
+    """
+
     const val DANGER_BUTTON = """
+        -fx-background-color: crimson;
+        -fx-text-fill: white;
+        -fx-font-size: 24px;
+    """
+
+    const val GO_BACK_BUTTON = """
         -fx-background-color: crimson;
         -fx-text-fill: white;
         -fx-font-size: 16px;
