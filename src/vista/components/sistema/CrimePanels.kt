@@ -75,7 +75,7 @@ fun RegisterCrime(sistema: Sistema) = Column(15.0).apply {
         })
     })
 
-    val criminals = listOf<Criminoso>() // TODO
+    val criminals = listOf<Criminoso>() // TODO replace with result from backend
 
     children.add(Row(15.0).apply {
         alignment = Pos.TOP_LEFT

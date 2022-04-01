@@ -4,7 +4,6 @@ import vista.Sistema
 import vista.State
 import vista.components.general.Title
 import vista.components.sistema.HomeScreenOptionsPane
-import vista.components.sistema.RegisterFormPane
 import vista.components.sistema.SearchFieldPane
 import vista.components.sistema.TopicOptionsPane
 import vista.util.Topico

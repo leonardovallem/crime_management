@@ -7,22 +7,18 @@ import javafx.scene.control.TextField
 import javafx.scene.paint.Color
 import javafx.scene.text.Text
 import javafx.stage.Screen
-import modelo.Arma
-import modelo.Vitima
-import vista.Sistema
-import vista.State
 import vista.components.general.Column
 import vista.components.general.Row
 import vista.util.SEARCH_ARMA
 import vista.util.Styles
 
 @Suppress("FunctionName")
-fun RegisterArma(sistema: Sistema, flag: String = "") = Column(15.0).apply {
+fun RegisterArma(flag: String = "") = Column(15.0).apply {
     alignment = Pos.TOP_CENTER
     maxWidth = Screen.getPrimary().visualBounds.width * 0.5
     padding = Insets(10.0)
 
-    if (State.payload.contains(SEARCH_ARMA) || (flag.isNotEmpty() && flag.contains(SEARCH_ARMA))) {
+    if (flag.isNotEmpty() && flag.contains(SEARCH_ARMA)) {
         children.add(Row(15.0).apply {
             alignment = Pos.TOP_LEFT
 

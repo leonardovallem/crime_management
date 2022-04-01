@@ -26,7 +26,7 @@ fun RegisterPessoa(sistema: Sistema, topic: Topico, flag: String = "") = Column(
     maxWidth = Screen.getPrimary().visualBounds.width * 0.5
     padding = Insets(10.0)
 
-    if (State.payload.contains(SEARCH_PESSOA) || (flag.isNotEmpty() && flag.contains(SEARCH_PESSOA))) {
+    if (flag.isNotEmpty() && flag.contains(SEARCH_PESSOA)) {
         children.add(Row(15.0).apply {
             alignment = Pos.TOP_LEFT
 
@@ -99,8 +99,8 @@ fun RegisterPessoa(sistema: Sistema, topic: Topico, flag: String = "") = Column(
     })
 
     if (topic == Topico.CRIMINOSO) {
-        val armas = listOf<Arma>() // TODO
-        val vitimas = listOf<Vitima>() // TODO
+        val armas = listOf<Arma>() // TODO replace with result from backend
+        val vitimas = listOf<Vitima>() // TODO replace with result from backend
 
         children.add(Row(15.0).apply {
             children.add(Row(15.0).apply {

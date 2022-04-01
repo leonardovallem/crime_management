@@ -4,7 +4,6 @@ import javafx.event.ActionEvent
 import javafx.event.EventHandler
 import vista.Sistema
 import vista.State
-import vista.components.general.Column
 import vista.components.general.Title
 import vista.components.sistema.RegisterArma
 import vista.components.sistema.RegisterCrime
@@ -23,10 +22,8 @@ fun Sistema.renderRegisterScreen(
             Topico.CRIME -> RegisterCrime(this)
             Topico.CRIMINOSO -> RegisterPessoa(this, Topico.CRIMINOSO, flag)
             Topico.VITIMA -> RegisterPessoa(this, Topico.VITIMA, flag)
-            Topico.ARMA -> RegisterArma(this, flag)
-            else -> Column(0.0)
-        },
-        payload = flag
+            Topico.ARMA -> RegisterArma(flag)
+        }
     )
     globalPane.update()
 }

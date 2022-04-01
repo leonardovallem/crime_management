@@ -24,8 +24,3 @@ fun TopicOptionsPane(sistema: Sistema) = Column(25.0).apply {
         sistema.renderRegisterScreen(Topico.ARMA) { sistema.renderRegisterScreen() }
     })
 }
-
-fun Sistema.renderCrimeButton() = renderRegisterScreen(Topico.CRIME) { renderRegisterScreen() }
-fun Sistema.renderCriminosoButton() = renderRegisterScreen(Topico.CRIMINOSO) { renderRegisterScreen() }
-fun Sistema.renderVitimaButton() = renderRegisterScreen(Topico.VITIMA) { renderRegisterScreen() }
-fun Sistema.renderArmaButton() = renderRegisterScreen(Topico.ARMA) { renderRegisterScreen() }

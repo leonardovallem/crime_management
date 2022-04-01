@@ -5,7 +5,6 @@ import vista.Sistema
 import vista.components.general.Column
 import vista.components.general.PrimaryButton
 import vista.components.screens.renderRegisterScreen
-import vista.util.Topico
 
 @Suppress("FunctionName")
 fun HomeScreenOptionsPane(sistema: Sistema) = Column(25.0).apply {
