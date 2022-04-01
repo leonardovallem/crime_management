@@ -8,7 +8,7 @@ import vista.components.general.Column
 import vista.components.general.Row
 import vista.components.general.SecondaryButton
 import vista.components.general.SecondaryVariantButton
-import vista.components.renderSearchScreen
+import vista.components.screens.renderSearchScreen
 import vista.util.Styles
 import vista.util.Topico
 

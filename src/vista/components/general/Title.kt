@@ -17,6 +17,8 @@ fun Title(title: String, onNavigateBack: EventHandler<ActionEvent>? = null) = Bo
             alignment = Pos.CENTER
             style = Styles.GO_BACK_BUTTON
             onAction = it
+
+            BorderPane.setAlignment(this, Pos.CENTER)
         }
     }
 
@@ -24,5 +26,7 @@ fun Title(title: String, onNavigateBack: EventHandler<ActionEvent>? = null) = Bo
         style = Styles.TITLE
         fill = if (onNavigateBack == null) Color.YELLOW else Color.WHITE
         textAlignment = TextAlignment.CENTER
+
+        BorderPane.setAlignment(this, Pos.CENTER)
     }
 }

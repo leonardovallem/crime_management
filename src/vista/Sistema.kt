@@ -4,7 +4,7 @@ import javafx.application.Application
 import javafx.scene.Scene
 import javafx.stage.Stage
 import vista.components.general.GlobalPane
-import vista.components.renderHomeScreen
+import vista.components.screens.renderHomeScreen
 import vista.util.Styles.SURFACE
 
 class Sistema : Application() {
@@ -18,6 +18,7 @@ class Sistema : Application() {
         stage.run {
             title = "Sistema da Polícia"
             scene = Scene(globalPane)
+            isMaximized = true
             show()
         }
     }
