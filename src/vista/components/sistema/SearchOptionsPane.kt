@@ -8,7 +8,7 @@ import vista.components.general.Column
 import vista.components.general.Row
 import vista.components.general.SecondaryButton
 import vista.components.general.SecondaryVariantButton
-import vista.components.screens.renderSearchScreen
+import vista.components.screens.renderListScreen
 import vista.util.Styles
 import vista.util.Topico
 
@@ -27,10 +27,10 @@ fun SearchOptionsPane(sistema: Sistema) = Column(15.0).apply {
         alignment = Pos.CENTER
 
         children.add(SecondaryVariantButton("Crime") {
-            sistema.renderSearchScreen(Topico.CRIME)
+            sistema.renderListScreen(Topico.CRIME)
         })
         children.add(SecondaryButton("Criminoso") {
-            sistema.renderSearchScreen(Topico.CRIMINOSO)
+            sistema.renderListScreen(Topico.CRIMINOSO)
         })
     })
 
@@ -38,10 +38,10 @@ fun SearchOptionsPane(sistema: Sistema) = Column(15.0).apply {
         alignment = Pos.CENTER
 
         children.add(SecondaryButton("Vítima") {
-            sistema.renderSearchScreen(Topico.VITIMA)
+            sistema.renderListScreen(Topico.VITIMA)
         })
         children.add(SecondaryButton("Arma") {
-            sistema.renderSearchScreen(Topico.ARMA)
+            sistema.renderListScreen(Topico.ARMA)
         })
     })
 }

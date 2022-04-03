@@ -1,16 +1,23 @@
 package vista.components.sistema
 
+import controle.crimes
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Button
+import javafx.scene.control.TableCell
+import javafx.scene.control.TableColumn
+import javafx.scene.control.TableView
 import javafx.scene.control.TextField
 import javafx.scene.paint.Color
 import javafx.scene.text.Text
 import javafx.stage.Screen
+import javafx.util.Callback
+import modelo.Crime
 import modelo.Criminoso
 import vista.Sistema
 import vista.State
 import vista.components.general.Column
+import vista.components.general.ItemOptionsCell
 import vista.components.general.Row
 import vista.components.screens.renderRegisterScreen
 import vista.util.SEARCH_PESSOA
@@ -100,4 +107,20 @@ fun RegisterCrime(sistema: Sistema) = Column(15.0).apply {
             // TODO register crime
         })
     })
+}
+
+@Suppress("FunctionName")
+fun ListCrimes(): TableView<Crime> {
+    return TablePanel<Crime>().apply {
+        columns.add(CustomTableColumn<Crime, Int?>("Id", "id"))
+        columns.add(CustomTableColumn<Crime, String>("Data", "data"))
+        columns.add(CustomTableColumn<Crime, String>("Descrição", "descricao"))
+
+        columns.add(TableColumn<Crime, Boolean>().apply {
+            cellFactory = Callback<TableColumn<Crime, Boolean>, TableCell<Crime, Boolean>> {
+                ItemOptionsCell()
+            }
+        })
+        items.addAll(crimes)
+    }
 }

@@ -1,13 +1,24 @@
 package vista.components.sistema
 
+import controle.armas
+import controle.crimes
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Button
+import javafx.scene.control.ListView
+import javafx.scene.control.TableCell
+import javafx.scene.control.TableColumn
+import javafx.scene.control.TableView
 import javafx.scene.control.TextField
 import javafx.scene.paint.Color
 import javafx.scene.text.Text
 import javafx.stage.Screen
+import javafx.util.Callback
+import modelo.Arma
+import modelo.CheckableModel
+import modelo.Crime
 import vista.components.general.Column
+import vista.components.general.ItemOptionsCell
 import vista.components.general.Row
 import vista.util.SEARCH_ARMA
 import vista.util.Styles
@@ -100,4 +111,21 @@ fun RegisterArma(flag: String = "") = Column(15.0).apply {
             // TODO register criminal
         })
     })
+}
+
+@Suppress("FunctionName")
+fun ListArmas(): TableView<Arma> {
+    return TablePanel<Arma>().apply {
+        columns.add(CustomTableColumn<Arma, Int?>("Id", "id"))
+        columns.add(CustomTableColumn<Arma, String>("Número de registro", "numeroRegistro"))
+        columns.add(CustomTableColumn<Arma, String>("Descrição", "descricao"))
+        columns.add(CustomTableColumn<Arma, String>("Tipo", "tipo"))
+
+        columns.add(TableColumn<Arma, Boolean>().apply {
+            cellFactory = Callback<TableColumn<Arma, Boolean>, TableCell<Arma, Boolean>> {
+                ItemOptionsCell()
+            }
+        })
+        items.addAll(armas)
+    }
 }

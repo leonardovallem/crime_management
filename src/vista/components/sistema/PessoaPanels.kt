@@ -1,17 +1,25 @@
 package vista.components.sistema
 
+import controle.criminosos
+import controle.vitimas
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Button
+import javafx.scene.control.TableCell
+import javafx.scene.control.TableColumn
+import javafx.scene.control.TableView
 import javafx.scene.control.TextField
 import javafx.scene.paint.Color
 import javafx.scene.text.Text
 import javafx.stage.Screen
+import javafx.util.Callback
 import modelo.Arma
+import modelo.CheckableModel
 import modelo.Vitima
 import vista.Sistema
 import vista.State
 import vista.components.general.Column
+import vista.components.general.ItemOptionsCell
 import vista.components.general.Row
 import vista.components.screens.renderRegisterScreen
 import vista.util.SEARCH_ARMA
@@ -144,4 +152,23 @@ fun RegisterPessoa(sistema: Sistema, topic: Topico, flag: String = "") = Column(
             // TODO register criminal
         })
     })
+}
+
+@Suppress("FunctionName")
+fun ListPessoas(topic: Topico): TableView<CheckableModel> {
+    fun data() = if (topic == Topico.CRIMINOSO) criminosos else vitimas
+
+    return TablePanel<CheckableModel>().apply {
+        columns.add(CustomTableColumn<CheckableModel, Int?>("Id", "id"))
+        columns.add(CustomTableColumn<CheckableModel, String>("Nome", "nome"))
+        columns.add(CustomTableColumn<CheckableModel, String>("CPF", "cpf"))
+        columns.add(CustomTableColumn<CheckableModel, String>("Data de nascimento", "dataNascimento"))
+
+        columns.add(TableColumn<CheckableModel, Boolean>().apply {
+            cellFactory = Callback<TableColumn<CheckableModel, Boolean>, TableCell<CheckableModel, Boolean>> {
+                ItemOptionsCell()
+            }
+        })
+        items.addAll(data())
+    }
 }

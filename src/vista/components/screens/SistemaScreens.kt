@@ -20,15 +20,15 @@ fun Sistema.renderHomeScreen() {
 fun Sistema.renderRegisterScreen() {
     State.update(
         title = Title("Menu de cadastro") { renderHomeScreen() },
-        center = TopicOptionsPane(this)
+        center = TopicOptionsPane(this, isRegister = true)
     )
     globalPane.update()
 }
 
-fun Sistema.renderSearchScreen(topic: Topico) {
+fun Sistema.renderListScreen() {
     State.update(
-        title = Title("Pesquisar $topic") { renderHomeScreen() },
-        center = SearchFieldPane(this, topic)
+        title = Title("Menu de listagem") { renderHomeScreen() },
+        center = TopicOptionsPane(this, isRegister = false)
     )
     globalPane.update()
 }
